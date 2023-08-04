@@ -15,12 +15,25 @@ public class personalFinance {
 
             double result = estimatePay();
             System.out.println("Estimated pay: " + result);
-            String userOption = keyboard.nextLine();
 
-            if (userOption.equalsIgnoreCase("done")) {
+            System.out.println("Do you plan on saving this pay period: y/n");
+            String saveOptionAnswer = keyboard.nextLine();
+            if (saveOptionAnswer.equalsIgnoreCase("y")){
+                double totalToSave = .35 * result;
+                System.out.println("You need to save: " + totalToSave);
+
+            }
+
+
+
+
+            String userOption = keyboard.nextLine();
+             if (userOption.equalsIgnoreCase("done")) {
                 System.out.println("Exiting the program...");
                 break;
             }
+
+
 
         }
 
@@ -30,7 +43,7 @@ public class personalFinance {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Enter work hours to estimate upcoming pay: ");
-        int estimatedHours = Integer.parseInt(keyboard.nextLine());
+        double estimatedHours = Double.parseDouble(keyboard.nextLine());
 
         System.out.println("Enter pay rate: ");
         double payRate = Double.parseDouble(keyboard.nextLine());
